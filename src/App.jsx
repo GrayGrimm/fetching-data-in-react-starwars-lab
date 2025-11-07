@@ -8,13 +8,10 @@ const App = () => {
   const [filteredStarships, setFilteredStarships] = useState([]);
   useEffect(() => {
     const fetchAllStarships = async () => {
-      try {
-        const fetchedStarships = await starshipService.index();
-        setStarships(fetchedStarships);
-        setFilteredStarships(fetchedStarships);
-      } catch (err) {
-        console.log(err);
-      }
+      const fetchedStarships = await starshipService.index();
+      console.log(fetchedStarships);
+      setStarships(fetchedStarships);
+      setFilteredStarships(fetchedStarships);
     };
     fetchAllStarships();
   }, []);
